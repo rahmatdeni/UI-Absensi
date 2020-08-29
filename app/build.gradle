@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 
 android {
@@ -97,6 +99,20 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jet_ver"
     kapt "androidx.hilt:hilt-compiler:$hilt_jet_ver"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Firebase
+    def firebase_analytic_version = "17.5.0"
+    implementation "com.google.firebase:firebase-analytics:$firebase_analytic_version"
+    def crashlytic_version = "17.2.1"
+    implementation "com.google.firebase:firebase-crashlytics:$crashlytic_version"
+    def firestore_version = "21.6.0"
+    implementation "com.google.firebase:firebase-firestore-ktx:$firestore_version"
+    def firestorage_version = "19.2.0"
+    implementation "com.google.firebase:firebase-storage:$firestorage_version"
+    def cloud_messaging_version = "20.2.4"
+    implementation "com.google.firebase:firebase-messaging:$cloud_messaging_version"
+    def firestoreui_version = "6.2.1"
+    implementation "com.firebaseui:firebase-ui-firestore:$firestoreui_version"
 
     // For instrumentation tests
     androidTestImplementation  "com.google.dagger:hilt-android-testing:$hilt_version"
