@@ -23,7 +23,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "NOTIFICATION_URL", "\"https://fcm.googleapis.com/fcm/\""
+            buildConfigField "String", "NOTIFICATION_TOKEN", "\"AAAAP8kG4iM:APA91bGedQnZKXI8aSXSafqEB8wlvybD7YWxjIcKsPedX3qw0m-SbhredU0ugCn8KC7GLZqJ9vhUy2KqyAsE-meByqel401-rPlb47PV6cXFyvDmcUzvGT8YXSuGCCeGPUh73oi-3Vyc\""
+        }
         release {
+            buildConfigField "String", "NOTIFICATION_URL", "\"https://fcm.googleapis.com/fcm/\""
+            buildConfigField "String", "NOTIFICATION_TOKEN", "\"AAAAP8kG4iM:APA91bGedQnZKXI8aSXSafqEB8wlvybD7YWxjIcKsPedX3qw0m-SbhredU0ugCn8KC7GLZqJ9vhUy2KqyAsE-meByqel401-rPlb47PV6cXFyvDmcUzvGT8YXSuGCCeGPUh73oi-3Vyc\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -122,7 +128,7 @@ dependencies {
     testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
     kaptTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
